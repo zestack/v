@@ -396,6 +396,14 @@ func (v *Valuer) IsUpper(options ...ErrorOption) *Valuer {
 	return v.string("is_upper", is.Uppercase, options)
 }
 
+func (v *Valuer) IsLabel(options ...ErrorOption) *Valuer {
+	return v.string(
+		"is_label",
+		is.Label,
+		append([]ErrorOption{ErrorParam("field", "标识")}, options...),
+	)
+}
+
 func (v *Valuer) Contains(substr string, options ...ErrorOption) *Valuer {
 	return v.simple(
 		"contains",

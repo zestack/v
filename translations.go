@@ -68,6 +68,7 @@ var (
 		"is_dir":                  {message: "{label}必须是一个有效的目录"},
 		"is_lower":                {message: "{label}必须是小写字母"},
 		"is_upper":                {message: "{label}必须是大写字母"},
+		"is_label":                {message: "{label}不是有效的{field}"},
 		"contains":                {message: "{label}必须包含文本'{substr}'"},
 		"contains_any":            {message: "{label}必须包含至少一个以下字符'{chars}'"},
 		"contains_rune":           {message: "{label}必须包含字符'{rune}'"},
