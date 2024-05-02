@@ -81,6 +81,19 @@ func Validate(validations ...Validatable) error {
 	return &errs
 }
 
+// Check 逐条执行验证器，一旦验证未通过，立即返回
+func Check(validations ...Validatable) error {
+	for _, validation := range validations {
+		if validation == nil {
+			continue
+		}
+		if err := validation.Validate(); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // IndexBy 分组验证，只要其中一组验证通过就返回
 func IndexBy(index *int, values [][]any, options ...ErrorOption) Checker {
 	return func() error {
